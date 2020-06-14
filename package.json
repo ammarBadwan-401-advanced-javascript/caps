@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ammarBadwan-401-advanced-javascript/caps#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "faker": "^4.1.0"
   },
   "devDependencies": {

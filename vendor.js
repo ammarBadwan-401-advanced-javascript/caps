@@ -1,7 +1,8 @@
 'use strict';
 const faker = require('faker');
 const events = require('./event');
-let storeName = 'Ammar Shop';
+require('dotenv').config();
+let storeName = process.env.STORE_NAME || 'Ammar Shop';
 
 events.on('delivered', delivered);
 setInterval(()=>{
