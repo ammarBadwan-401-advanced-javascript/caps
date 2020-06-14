@@ -11,5 +11,5 @@ events.on('in-transit', payload => logger('in-transit',payload));
 
 function logger(event,payload){
   let time = new Date();
-  console.log({event,time,payload});
+  console.log('EVENT',{event,time,payload});
 }

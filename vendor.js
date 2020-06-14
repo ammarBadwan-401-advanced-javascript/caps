@@ -7,7 +7,7 @@ events.on('delivered', delivered);
 setInterval(()=>{
   let order = {
     storeName: storeName,
-    orderId: faker.random.number(),
+    orderId: faker.random.uuid(),
     customerName: faker.name.firstName(),
     address: faker.address.streetAddress(),
   };
@@ -15,5 +15,5 @@ setInterval(()=>{
 },5000);
 
 function delivered(order){
-  console.log(`Thank you for delivering ${order.orderId}`);
+  console.log(`VENDOR: Thank you for delivering ${order.orderId}`);
 }
