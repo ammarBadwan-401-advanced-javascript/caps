@@ -1,5 +1,4 @@
 'use strict';
-const faker = require('faker');
 const events = require('./event');
 
 events.on('pickup',pickup);
