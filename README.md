@@ -11,15 +11,21 @@
 
 ### Modules
 
+#### Events modules
 * `./event.js`
 * `./caps.js`
 * `./driver.js`
 * `./vendor.js`
 
+#### TCP Modules (they require npm i before working)
+* `./driver/driver.js`
+* `./CAPS/caps.js`
+* `./vendor/vendor.js`
+
 ### How to initialize the application
 
 
-* `node caps.js` OR `node start` --> To start the server using express
+* Start by running `caps.js` module, then run `vendor.js` module, lastly run `driver.js` module, all those modules are inside their similarly named folders and **NOT** the ones in the main directory.
 
 ### Tests
 
