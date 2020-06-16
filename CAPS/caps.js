@@ -1,7 +1,54 @@
 'use strict';
+const PORT = process.env.PORT || 3000;
+
+const io = require('socket.io')(PORT);
+
+
+
+const caps = io.of('/caps');
+caps.on('connection',socket=>{
+  console.log('Welcome to CAPS, user-'+socket.id);
+  let currentRoom = '';
+
+  socket.on('join', room=>{
+    socket.leave(currentRoom);
+    socket.join(room);
+    currentRoom = room;
+    console.log('someonne joined the room' + room);
+    caps.to(currentRoom).emit('message');
+
+
+    socket.on('pickup', order=>{
+      io.emit(order);
+      let time = new Date();
+      console.log('EVENT',{event:order.event,time,payload: order.payload});
+    });
+  
+    socket.on('in-transit', payload=>{
+      caps.to('vendor').emit('in-transit',payload);
+      console.log('someone is here');
+
+    });
+  
+    socket.on('delivered',payload=>{
+      caps.to('vendor').emit('delivered',payload);
+    });
+
+
+  });
+
+
+});
+
+
+
+
+
+/*
 const net = require('net');
 
-const PORT = process.env.PORT || 3000;
+
+
 
 const server = net.createServer(); 
 server.listen(PORT, ()=> console.log(`Server is up on ${PORT}`));
@@ -45,3 +92,4 @@ function broadcast(data){
     socketPool[socket].write(payload);
   }
 }
+*/
