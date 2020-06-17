@@ -1,4 +1,4 @@
-# LAB - 16
+# LAB - 18
 
 ## Event Driven Applications
 
@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [Pull Request](https://github.com/ammarBadwan-401-advanced-javascript/caps/pull/1)
+- [Pull Request](https://github.com/ammarBadwan-401-advanced-javascript/caps/pull/3)
 - [GitHub Actions CI](https://github.com/ammarBadwan-401-advanced-javascript/caps/actions)
 
 ### Modules
@@ -17,7 +17,7 @@
 * `./driver.js`
 * `./vendor.js`
 
-#### TCP Modules (they require npm i before working)
+#### Socket.io Modules (they require npm i before working)
 * `./driver/driver.js`
 * `./CAPS/caps.js`
 * `./vendor/vendor.js`
